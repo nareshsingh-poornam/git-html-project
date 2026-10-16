@@ -7,10 +7,29 @@
   <style>
     body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 3rem auto; padding: 0 1rem; line-height: 1.6; color: #222; }
     h1 { color: #1f4e79; }
+    button { font: inherit; padding: 0.5rem 1rem; border: 0; border-radius: 6px; background: #1f4e79; color: #fff; cursor: pointer; }
+    button:hover { background: #163a5a; }
   </style>
 </head>
 <body>
   <h1>My First Git Project</h1>
-  <p>This is a simple HTML page used to practise Git: creating a repository, making commits and working with branches.</p>
+  <p>This page was updated on the <code>feature/update-content</code> branch to show how changes move from a feature branch into <code>main</code> through a pull request on GitHub.</p>
+
+  <h2>Steps in this project</h2>
+  <ul>
+    <li>Initialise a repository and commit the first version of the page</li>
+    <li>Create the <code>feature/update-content</code> branch</li>
+    <li>Update the content and commit the changes</li>
+    <li>Push both branches to GitHub and open a pull request</li>
+  </ul>
+
+  <button type="button" id="show-date">Show today's date</button>
+  <p id="date-output" aria-live="polite"></p>
+
+  <script>
+    document.getElementById('show-date').addEventListener('click', () => {
+      document.getElementById('date-output').textContent = `Today is ${new Date().toLocaleDateString()}.`;
+    });
+  </script>
 </body>
 </html>
